@@ -35,11 +35,4 @@ For project tasks and planning:
 **Contributions:**
 Feel free to contribute by opening a "Pull Request" or reporting any issues you encounter.
 
-## 👥 Team Members
-
-- **Rana Salameh**  
-- **Noor Sroor**  
-- **Ahlam Hani**  
-- **Heba Maaita**  
-- **Hala Abu Shehab** 
 
