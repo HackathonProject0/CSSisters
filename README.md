@@ -20,7 +20,10 @@ You can view the design here:
 
 **Trello Board:**
 For project tasks and planning:  
-[Trello Board - CSSisters](https://trello.com/invite/b/67d7d212af30bbb292b94a53/ATTI964a95c4d52f69ee588bc202724bcb55BB17C111/cssisters)
+[Trello Board - CSSisters](https://trello.com/b/k4pwylpv/cssisters)
+
+**Live demo:**
+[[Trello Board - CSSisters](https://trello.com/invite/b/67d7d212af30bbb292b94a53/ATTI964a95c4d52f69ee588bc202724bcb55BB17C111/cssisters](https://hackathonproject0.github.io/CSSisters/))
 
 **How to Run Locally:**
 1. **Download Files**: Download the project files from the repository.
