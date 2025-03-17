@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: linear-gradient(135deg, #471C54 0%, #673a74 100%);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      padding: 25px;
+    }
+
+    .login-form {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-form::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 150px;
+      height: 150px;
+      background-color: rgba(217, 178, 85, 0.1);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .login-form::after {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      background-color: rgba(71, 28, 84, 0.1);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #471C54;
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-size: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .input-group label {
+      display: flex;
+      align-items: center;
+      background-color: #f8f8f8;
+      border-radius: 30px;
+      padding: 5px 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .input-group label:focus-within {
+      box-shadow: 0 2px 10px rgba(217, 178, 85, 0.3);
+    }
+
+    .input-group i {
+      color: #471C54;
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 5px;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .input-group input::placeholder {
+      color: #999;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #471C54, #673a74);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(71, 28, 84, 0.3);
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-btn:hover {
+      background: linear-gradient(to right, #D9B255, #e6c478);
+      box-shadow: 0 5px 15px rgba(217, 178, 85, 0.3);
+    }
+
+    .signup-link {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .signup-link p {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .signup-link a {
+      color: #471C54;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .signup-link a:hover {
+      color: #D9B255;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .login-form {
+      animation: fadeIn 0.5s ease forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="login-form">
+      <h2>Login</h2>
+      <form id="input">
+        <div class="input-group">
+          <label for="email">
+            <i class="fas fa-envelope"></i>
+            <input type="text" id="email" placeholder="Email Address">
+          </label>
+        </div>
+        <div class="input-group">
+          <label for="password">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" placeholder="Password">
+          </label>
+        </div>
+
+        <button type="submit" class="login-btn">LOGIN</button>
+
+        <div class="signup-link">
+          <p>Or Sign Up Using</p>
+          <a href="register.html">SIGN UP</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+    import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDvSYWemw6Bu3FuT4xZ0-Ei9XyOb5Hqih0",
+      authDomain: "hackathon-22011.firebaseapp.com",
+      databaseURL: "https://hackathon-22011-default-rtdb.firebaseio.com",
+      projectId: "hackathon-22011",
+      storageBucket: "hackathon-22011.firebasestorage.app",
+      messagingSenderId: "143964082984",
+      appId: "1:143964082984:web:ef075aa8454f6a4b90f61d",
+      measurementId: "G-WVMW59PHRT"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const auth = getAuth(app);
+
+    // Login form submission
+    const form = document.getElementById('input');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        // Sign in with email and password
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        console.log("Login successful:", user);
+
+        // Access user data from Realtime Database
+        const userRef = ref(db, 'users/' + user.uid);
+        const snapshot = await get(userRef);
+        if (snapshot.exists()) {
+          // SweetAlert for successful login
+          Swal.fire({
+            icon: 'success',
+            title: 'Login Successful!',
+            text: 'You have successfully logged in.',
+            confirmButtonText: 'OK'
+          }).then(() => {
+            window.location.href = './index.html'; // Redirect after confirmation
+          });
+        } else {
+          console.error("User data not found in Realtime Database.");
+          Swal.fire({
+            icon: 'error',
+            title: 'User Data Not Found',
+            text: 'Please sign up first.',
+            confirmButtonText: 'OK'
+          });
+        }
+
+      } catch (error) {
+        console.error("Error during login:", error);
+
+        // SweetAlert for error handling
+        if (error.code === 'auth/user-not-found') {
+          Swal.fire({
+            icon: 'error',
+            title: 'User Not Found',
+            text: 'Please sign up first.',
+            confirmButtonText: 'OK'
+          });
+        } else if (error.code === 'auth/wrong-password') {
+          Swal.fire({
+            icon: 'error',
+            title: 'Incorrect Password',
+            text: 'Please try again.',
+            confirmButtonText: 'OK'
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Login Failed',
+            text: error.message,
+            confirmButtonText: 'OK'
+          });
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

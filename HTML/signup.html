@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-image: linear-gradient(135deg, #471C54 0%, #673a74 100%);
+        padding: 20px 0;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 450px;
+        padding: 25px;
+      }
+
+      .login-form {
+        background-color: white;
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .login-form::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        width: 150px;
+        height: 150px;
+        background-color: rgba(217, 178, 85, 0.1);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .login-form::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        background-color: rgba(71, 28, 84, 0.1);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      h2 {
+        text-align: center;
+        color: #471C54;
+        font-weight: 600;
+        margin-bottom: 30px;
+        font-size: 28px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .input-group label {
+        display: flex;
+        align-items: center;
+        background-color: #f8f8f8;
+        border-radius: 30px;
+        padding: 5px 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .input-group label:focus-within {
+        box-shadow: 0 2px 10px rgba(217, 178, 85, 0.3);
+      }
+
+      .input-group i {
+        color: #471C54;
+        margin-right: 10px;
+        font-size: 18px;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px 5px;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 14px;
+      }
+
+      .input-group input::placeholder {
+        color: #999;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(to right, #471C54, #673a74);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(71, 28, 84, 0.3);
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .login-btn:hover {
+        background: linear-gradient(to right, #D9B255, #e6c478);
+        box-shadow: 0 5px 15px rgba(217, 178, 85, 0.3);
+      }
+
+      .signup-link {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        margin-top: 15px;
+      }
+
+      .signup-link a {
+        color: #471C54;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .signup-link a:hover {
+        color: #D9B255;
+      }
+
+      p {
+        text-align: center;
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #f8f8f8;
+        border-radius: 50%;
+        margin: 0 10px;
+        color: #471C54;
+        text-decoration: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        background-color: #D9B255;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(217, 178, 85, 0.3);
+      }
+
+      .social-icons i {
+        font-size: 18px;
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .login-form {
+        animation: fadeIn 0.5s ease forwards;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="login-form">
+        <h2>Sign Up</h2>
+        <form id="input">
+          <div class="input-group">
+            <label for="firstname">
+              <i class="fas fa-user"></i>
+              <input type="text" id="firstname" placeholder="First name" required />
+            </label>
+          
+            <label for="lastname">
+              <i class="fas fa-user"></i>
+              <input type="text" id="lastname" placeholder="Last name" required />
+            </label>
+          
+            <label for="email">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="email" placeholder="Email address" required />
+            </label>
+          
+            <label for="password">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="password" placeholder="Password" required />
+            </label>
+          
+            <label for="age">
+              <i class="fas fa-calendar-alt"></i>
+              <input type="number" id="age" placeholder="Age" required />
+            </label>
+          </div>
+
+          <button type="submit" class="login-btn">SIGN UP</button>
+          <p>Or Sign Up Using</p>
+          <div class="social-icons">
+            <a href="#" id="google-signin"><i class="fab fa-google"></i></a>
+          </div>
+          <div class="signup-link">
+            <a href="login.html">Already have an account? LOGIN</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+      import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+      import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDvSYWemw6Bu3FuT4xZ0-Ei9XyOb5Hqih0",
+        authDomain: "hackathon-22011.firebaseapp.com",
+        databaseURL: "https://hackathon-22011-default-rtdb.firebaseio.com",
+        projectId: "hackathon-22011",
+        storageBucket: "hackathon-22011.firebasestorage.app",
+        messagingSenderId: "143964082984",
+        appId: "1:143964082984:web:ef075aa8454f6a4b90f61d",
+        measurementId: "G-WVMW59PHRT"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getDatabase(app);
+      const analytics = getAnalytics(app);
+
+      const form = document.getElementById("input");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        let firstName = document.getElementById("firstname").value;
+        let lastName = document.getElementById("lastname").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let age = document.getElementById("age").value;
+
+        try {
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          const user = userCredential.user;
+
+          // Realtime Database: Add user data
+          await set(ref(db, 'users/' + user.uid), {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            age: age,
+            giftPreferences: [] // No gift preferences input, just an empty array
+          });
+
+          alert("User added successfully!");
+          window.location.href = "./home1.html";  // Redirect to home1 page
+        } catch (error) {
+          console.error("Error:", error.code, error.message);
+          alert("Error: " + error.message);
+        }
+      });
+
+      const googleButton = document.getElementById("google-signin");
+      googleButton.addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        const provider = new GoogleAuthProvider();
+        try {
+          const result = await signInWithPopup(auth, provider);
+          const user = result.user;
+          console.log("Google sign in successful:", user);
+          alert("Google sign in successful!");
+          window.location.href = "./home1.html";  // Redirect to home1 page
+        } catch (error) {
+          console.error("Google Sign-In Error:", error.code, error.message);
+          alert("Error: " + error.message);
+        }
+      });
+    </script>
+  </body>
+</html>

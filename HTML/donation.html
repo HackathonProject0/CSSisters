@@ -11,15 +11,70 @@
         body { font-family: 'Poppins', sans-serif; }
         .star-rating { color: #FFD700; }
         .star-empty { color: #E2E8F0; }
+        .active-nav-link { 
+            color: #FFD700; 
+            border-bottom: 2px solid #FFD700; 
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
+    <!-- Navigation Bar -->
+    <nav class="bg-[#471C54] text-white">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#D9B255]" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                    </svg>
+                </div>
+                <a href="#" class="text-xl font-bold">
+                    <span class="text-[#D9B255]">Noor</span><span class="text-white">Nest</span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="../index.html" class="hover:text-[#D9B255] py-2">Home</a>
+                <a href="./donation.html" class="active-nav-link py-2">Events</a>
+                <a href="./contact.html" class="hover:text-[#D9B255] py-2">contact</a>
+                <a href="./about.html" class="hover:text-[#D9B255] py-2">About</a>
+                <a href="./charity.html" class="hover:text-[#D9B255] py-2">Charity Books</a>
+            </div>
+            <div>
+                <a href="./signup.html" class="bg-[#D9B255] text-white px-4 py-2 rounded-md hover:bg-yellow-600">Sign In</a>
+            </div>
+        </div>
+    </nav>
+    <section class="relative h-[500px] overflow-hidden">
+        <!-- Video Background -->
+        <div class="absolute inset-0">
+            <video autoplay loop muted class="w-full h-full object-cover">
+                <source src="https://videos.pexels.com/video-files/5798454/5798454-hd_1920_1080_30fps.mp4" type="video/mp4">
+                <!-- Fallback if video doesn't load -->
+                <img src="../assets/space-background.jpg" alt="Space background" class="w-full h-full object-cover">
+            </video>
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black opacity-70"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="container mx-auto px-4 h-full flex flex-col justify-center relative z-10 text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                Join Us for Iftar – Share the Blessings of Ramadan
+            </h1>
+            <a href="#" class="flex items-center text-[#D9B255] font-medium group w-fit">
+                This Ramadan, we are organizing a special Iftar event to provide meals
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
     <div class="container mx-auto px-4 py-6">
         <h1 class="text-3xl font-bold text-left mb-6">Select Location</h1>
         
         <!-- Location Filter Buttons -->
         <div class="flex flex-wrap gap-2 mb-8 items-center">
-            <button class="location-btn bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600" data-location="all">Select All</button>
+            <button class="location-btn bg-[#D9B255] text-white px-4 py-2 rounded-full hover:bg-yellow-600" data-location="all">Select All</button>
             <button class="location-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200" data-location="amman">Amman</button>
             <button class="location-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200" data-location="zarqa">Zarqa</button>
             <button class="location-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200" data-location="irbid">Irbid</button>
@@ -48,3 +103,5 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../JS/donation.js" type="module"></script>
+</body>
+</html>
