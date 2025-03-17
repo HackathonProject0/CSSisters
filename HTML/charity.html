@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadan Donation Campaign</title>
+    <title>Charity Box - Daily Sadaqah</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -17,245 +17,150 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        .calendar-day {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border-radius: 50%;
+        .gradient-bg {
+            background: linear-gradient(135deg, #471C54, #D9B255);
         }
-        .calendar-day:hover {
-            background-color: rgba(217, 178, 85, 0.2);
+        .gradient-text {
+            background: linear-gradient(135deg, #D9B255, #471C54);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .calendar-day.selected {
-            background-color: #D9B255;
-            color: white;
+        .hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .calendar-day.today {
-            border: 1px solid #D9B255;
+        .hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
-    <nav class="bg-[#471C54] text-white">
+    <nav class="bg-purple text-white">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center">
                 <div class="mr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#D9B255]" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
                     </svg>
                 </div>
                 <a href="#" class="text-xl font-bold">
-                    <span class="text-[#D9B255]">Noor</span><span class="text-white">Nest</span>
+                    <span class="text-gold">Charity</span><span class="text-white">Box</span>
                 </a>
             </div>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="../index.html" class="hover:text-[#D9B255] py-2">Home</a>
-                <a href="./donation.html" class="hover:text-[#D9B255] py-2">Events</a>
-                <a href="./contact.html" class="hover:text-[#D9B255] py-2">contact</a>
-                <a href="./about.html" class="hover:text-[#D9B255] py-2">About</a>
-                <a href="./charity.html" class="active-nav-link py-2">Charity Books</a>
+                <a href="#" class="hover:text-gold py-2">Home</a>
+                <a href="#" class="hover:text-gold py-2">Events</a>
+                <a href="#" class="hover:text-gold py-2">Contact</a>
+                <a href="#" class="hover:text-gold py-2">About</a>
+                <a href="#" class="active-nav-link py-2">Charity Books</a>
             </div>
             <div>
-                <a href="#" class="bg-[#D9B255] text-white px-4 py-2 rounded-md hover:bg-yellow-600">Sign In</a>
+                <a href="#" class="bg-gold text-white px-4 py-2 rounded-md hover:bg-yellow-600">Sign In</a>
             </div>
         </div>
     </nav>
-    <div class="container mx-auto px-4 py-12 max-w-6xl">
-        <div class="text-center mb-8">
-            <span class="inline-block px-4 py-1 text-gold font-semibold rounded-full bg-gold bg-opacity-20 mb-4">DONATE NOW</span>
-            <h1 class="text-4xl font-bold text-purple mb-4">Support Our Ramadan Campaign</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Your donation will help provide food, care, and support during the holy month
-            </p>
-        </div>
 
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
-            <!-- Left Section - Donation Options -->
-            <div class="p-8 md:w-1/2">
-                <h2 class="text-2xl font-bold text-purple mb-4">Make a Donation</h2>
-                <p class="text-gray-600 mb-6">Choose an amount to donate or enter a custom amount</p>
-                
-                <!-- Calendar Section -->
-                <div class="mb-6">
-                    <h3 class="text-lg font-semibold text-purple mb-2">Select Donation Date</h3>
-                    <div class="border rounded-lg p-4">
-                        <div class="flex justify-between items-center mb-4">
-                            <button class="text-purple hover:text-gold">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </button>
-                            <h4 class="font-medium">Ramadan 2025</h4>
-                            <button class="text-purple hover:text-gold">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="grid grid-cols-7 gap-1 text-center mb-2">
-                            <div class="text-xs font-medium text-gray-500">Su</div>
-                            <div class="text-xs font-medium text-gray-500">Mo</div>
-                            <div class="text-xs font-medium text-gray-500">Tu</div>
-                            <div class="text-xs font-medium text-gray-500">We</div>
-                            <div class="text-xs font-medium text-gray-500">Th</div>
-                            <div class="text-xs font-medium text-gray-500">Fr</div>
-                            <div class="text-xs font-medium text-gray-500">Sa</div>
-                        </div>
-                        <div class="grid grid-cols-7 gap-1">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div class="calendar-day">1</div>
-                            <div class="calendar-day">2</div>
-                            <div class="calendar-day">3</div>
-                            <div class="calendar-day">4</div>
-                            <div class="calendar-day">5</div>
-                            <div class="calendar-day">6</div>
-                            <div class="calendar-day">7</div>
-                            <div class="calendar-day">8</div>
-                            <div class="calendar-day">9</div>
-                            <div class="calendar-day">10</div>
-                            <div class="calendar-day">11</div>
-                            <div class="calendar-day today">12</div>
-                            <div class="calendar-day selected">13</div>
-                            <div class="calendar-day">14</div>
-                            <div class="calendar-day">15</div>
-                            <div class="calendar-day">16</div>
-                            <div class="calendar-day">17</div>
-                            <div class="calendar-day">18</div>
-                            <div class="calendar-day">19</div>
-                            <div class="calendar-day">20</div>
-                            <div class="calendar-day">21</div>
-                            <div class="calendar-day">22</div>
-                            <div class="calendar-day">23</div>
-                            <div class="calendar-day">24</div>
-                            <div class="calendar-day">25</div>
-                            <div class="calendar-day">26</div>
-                            <div class="calendar-day">27</div>
-                            <div class="calendar-day">28</div>
-                            <div class="calendar-day">29</div>
-                            <div class="calendar-day">30</div>
-                        </div>
-                    </div>
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <header class="gradient-bg text-white p-8 rounded-lg shadow-lg text-center hover-effect">
+            <h1 class="text-4xl font-bold">Charity Box</h1>
+            <h2 class="text-2xl mt-2">Daily Sadaqah Account</h2>
+        </header>
+
+        <main class="mt-8">
+            <section class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                <h3 class="text-lg font-semibold gradient-text">Total: $<span id="totalAmount">0.00</span></h3>
+                <p class="mt-4 text-gray-600">Schedule your donations and sadaqah from now, and we will distribute them for you every night during Ramadan. Your sadaqah equals a life!</p>
+                <p class="mt-2 text-gray-600">Simply determine the appropriate donation amount for you throughout the blessed days of Ramadan. Our team will distribute your donation daily to the charity projects listed on our platform, and you will receive a thank you email each day detailing the project and the amount donated.</p>
+            </section>
+
+            <section class="bg-white p-6 rounded-lg shadow-md mt-6 hover-effect">
+                <h3 class="text-lg font-semibold gradient-text">Do you want to donate in Ramadan?</h3>
+                <p class="mt-2 text-gray-600">You can change how your donation is distributed by adjusting the amount below.</p>
+                <div class="mt-4">
+                    <label for="totalDonation" class="block text-sm font-medium text-gray-700">Total Donation Amount ($)</label>
+                    <input type="number" id="totalDonation" name="totalDonation" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple focus:border-purple sm:text-sm">
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <!-- 35 JD Option -->
-                    <div class="border rounded-lg p-4 text-center cursor-pointer hover:border-gold">
-                        <h3 class="text-xl font-bold text-purple">35 JD</h3>
-                        <p class="text-sm text-gray-600">Feeds 5 families for iftar</p>
-                    </div>
-                    
-                    <!-- 70 JD Option -->
-                    <div class="border rounded-lg p-4 text-center cursor-pointer hover:border-gold">
-                        <h3 class="text-xl font-bold text-purple">70 JD</h3>
-                        <p class="text-sm text-gray-600">Provides 10 food parcels</p>
-                    </div>
-                    
-                    <!-- 175 JD Option -->
-                    <div class="border rounded-lg p-4 text-center cursor-pointer hover:border-gold">
-                        <h3 class="text-xl font-bold text-purple">175 JD</h3>
-                        <p class="text-sm text-gray-600">Supports 5 orphans for Ramadan</p>
-                    </div>
-                    
-                    <!-- 350 JD Option -->
-                    <div class="border rounded-lg p-4 text-center cursor-pointer hover:border-gold">
-                        <h3 class="text-xl font-bold text-purple">350 JD</h3>
-                        <p class="text-sm text-gray-600">Helps establish a community iftar center</p>
-                    </div>
+                <div class="mt-4">
+                    <label for="dateRange" class="block text-sm font-medium text-gray-700">Select Date Range</label>
+                    <input type="text" id="dateRange" name="dateRange" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple focus:border-purple sm:text-sm" placeholder="Select Date Range">
                 </div>
-                
-                <!-- Custom Amount -->
-                <div class="mb-6">
-                    <label class="block text-gray-700 mb-2">Custom Amount</label>
-                    <div class="flex items-center">
-                        <span class="text-gray-600 mr-2">JD</span>
-                        <input type="text" placeholder="0.00" class="border rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-gold">
-                    </div>
-                </div>
-                
-                <!-- Donate Button -->
-                <button class="w-full bg-gold text-white py-3 px-6 rounded-lg font-bold hover:bg-opacity-90 transition duration-300">
-                    Donate Now
-                </button>
-            </div>
-            
-            <!-- Right Section - Impact -->
-            <div class="bg-purple p-8 text-white md:w-1/2">
-                <h2 class="text-2xl font-bold mb-4">Your Impact</h2>
-                <p class="mb-6">Here's how your donation will make a difference this Ramadan:</p>
-                
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-gold text-purple flex items-center justify-center mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                        </div>
-                        <span>Provide iftar meals to families in need</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-gold text-purple flex items-center justify-center mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                        </div>
-                        <span>Distribute essential food parcels</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-gold text-purple flex items-center justify-center mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                        </div>
-                        <span>Support orphans with care and education</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-gold text-purple flex items-center justify-center mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                        </div>
-                        <span>Establish community centers for iftar gatherings</span>
-                    </li>
-                    <li class="flex items-start">
-                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-gold text-purple flex items-center justify-center mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                        </div>
-                        <span>Provide Eid gifts for children in need</span>
-                    </li>
-                </ul>
-                
-                <!-- Quote -->
-                <blockquote class="border-l-4 border-gold pl-4 italic">
-                    <p class="mb-2">"Whoever feeds a fasting person will have a reward like that of the fasting person, without any reduction in his reward."</p>
-                    <footer class="text-gold">— Prophet Muhammad (PBUH)</footer>
-                </blockquote>
-            </div>
-        </div>
+                <button onclick="calculateDailyDonation()" class="mt-4 w-full bg-purple text-white py-2 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple focus:ring-offset-2">Calculate Daily Donation</button>
+            </section>
+
+            <section id="dailyDonation" class="bg-white p-6 rounded-lg shadow-md mt-6 hidden hover-effect">
+                <h3 class="text-lg font-semibold gradient-text">Daily Donation: $<span id="dailyAmount">0.00</span></h3>
+                <p class="mt-2 text-gray-600">Your total donation will be divided over <span id="numberOfDays">0</span> days.</p>
+            </section>
+
+            <section class="bg-white p-6 rounded-lg shadow-md mt-6 hover-effect">
+                <h3 class="text-lg font-semibold gradient-text">Last Ramadan Campaign: Medicines</h3>
+                <blockquote class="mt-2 italic text-gray-600">The Prophet (peace be upon him) said: "Whoever gives charity equal to a date from good earnings, for Allah does not accept anything but good, Allah will take it in His right hand and tend it for its giver as one of you tends his foal, until it becomes like a mountain."</blockquote>
+                <p class="mt-2 text-gray-600">The campaign contributes to meeting the needs of thousands of needy people and displaced families for food during Ramadan, in response to their dire humanitarian conditions.</p>
+            </section>
+        </main>
+
+        <footer class="mt-8 text-center text-sm text-gray-600">
+            <p>Â© 2023 Charity Box. All rights reserved.</p>
+        </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
-        // Simple calendar functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const days = document.querySelectorAll('.calendar-day');
-            days.forEach(day => {
-                day.addEventListener('click', function() {
-                    // Remove selected class from all days
-                    days.forEach(d => d.classList.remove('selected'));
-                    // Add selected class to clicked day
-                    this.classList.add('selected');
-                });
-            });
+        flatpickr("#dateRange", {
+            mode: "range",
+            dateFormat: "Y-m-d",
+            minDate: "today",
         });
+
+        function calculateDailyDonation() {
+            const totalDonation = parseFloat(document.getElementById('totalDonation').value);
+            const dateRange = document.getElementById('dateRange').value;
+
+            if (!totalDonation || !dateRange) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please enter a valid donation amount and select a date range.',
+                });
+                return;
+            }
+
+            const dates = dateRange.split(" to ");
+            const startDate = new Date(dates[0]);
+            const endDate = new Date(dates[1]);
+
+            const timeDiff = endDate - startDate;
+            const numberOfDays = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)) + 1;
+
+            if (numberOfDays <= 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please select a valid date range.',
+                });
+                return;
+            }
+
+            const dailyAmount = (totalDonation / numberOfDays).toFixed(2);
+
+            // Update Total Amount
+            document.getElementById('totalAmount').textContent = totalDonation.toFixed(2);
+
+            // Update Daily Donation Section
+            document.getElementById('dailyAmount').textContent = dailyAmount;
+            document.getElementById('numberOfDays').textContent = numberOfDays;
+            document.getElementById('dailyDonation').classList.remove('hidden');
+
+            // Show SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: 'Donation Calculated!',
+                text: `Your daily donation is $${dailyAmount} over ${numberOfDays} days.`,
+            });
+        }
     </script>
 </body>
 </html>
