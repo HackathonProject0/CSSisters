@@ -1,0 +1,109 @@
+{
+  "donations": [
+    {
+      "id": 1,
+      "title": "Elderly Iftar Table",
+      "description": "A charitable iftar table dedicated to the elderly, providing nutritious and easy-to-digest meals in a warm atmosphere.",
+      "image": "https://example.com/senior-iftar.jpg",
+      "location": "Amman, Jordan"
+    },
+    {
+      "id": 2,
+      "title": "Orphan Iftar Gathering",
+      "description": "A Ramadan iftar held at orphanages to create a family-like atmosphere filled with joy for orphaned children.",
+      "image": "https://example.com/orphan-iftar.jpg",
+      "location": "Zarqa, Jordan"
+    },
+    {
+      "id": 3,
+      "title": "Charity Iftar for Needy Families",
+      "description": "Complete Ramadan meals provided to needy families to ease financial burdens during the holy month.",
+      "image": "https://example.com/charity-iftar.jpg",
+      "location": "Irbid, Jordan"
+    },
+    {
+      "id": 4,
+      "title": "Mosque Iftar Table",
+      "description": "Ramadan meals served in mosques for fasting individuals, offering a variety of light and nutritious dishes.",
+      "image": "https://example.com/mosque-iftar.jpg",
+      "location": "Aqaba, Jordan"
+    },
+    {
+      "id": 5,
+      "title": "Community Neighbors' Iftar",
+      "description": "A communal iftar gathering that brings neighbors together, strengthening social ties during Ramadan.",
+      "image": "https://example.com/neighbors-iftar.jpg",
+      "location": "Mafraq, Jordan"
+    },
+    {
+      "id": 6,
+      "title": "Laborers' Iftar",
+      "description": "A special iftar for workers in physically demanding jobs, featuring nutritious meals to restore their energy.",
+      "image": "https://example.com/workers-iftar.jpg",
+      "location": "Balqa, Jordan"
+    },
+    {
+      "id": 7,
+      "title": "Refugee Iftar Table",
+      "description": "Hot meals distributed in refugee camps to ensure a fulfilling iftar for displaced families.",
+      "image": "https://example.com/refugee-iftar.jpg",
+      "location": "Zaatari Camp, Jordan"
+    },
+    {
+      "id": 8,
+      "title": "Travelers' Iftar",
+      "description": "Meals distributed on roads for travelers and commuters breaking their fast while on the move.",
+      "image": "https://example.com/travelers-iftar.jpg",
+      "location": "Amman Airport, Jordan"
+    },
+    {
+      "id": 9,
+      "title": "Hospital Iftar Table",
+      "description": "Ramadan meals served to patients and healthcare workers during iftar time.",
+      "image": "https://example.com/hospital-iftar.jpg",
+      "location": "King Hussein Medical Center, Amman"
+    },
+    {
+      "id": 10,
+      "title": "Boarding School Iftar",
+      "description": "An iftar gathering for students in boarding schools to create a warm Ramadan experience.",
+      "image": "https://example.com/school-iftar.jpg",
+      "location": "Salt, Jordan"
+    },
+    {
+      "id": 11,
+      "title": "Sanitation Workers' Iftar",
+      "description": "Meals provided for sanitation workers as a token of appreciation for their hard work in keeping cities clean.",
+      "image": "https://example.com/cleaners-iftar.jpg",
+      "location": "Madaba, Jordan"
+    },
+    {
+      "id": 12,
+      "title": "Prison Iftar Table",
+      "description": "A charity iftar inside prisons to bring joy and spiritual connection to inmates during Ramadan.",
+      "image": "https://example.com/prison-iftar.jpg",
+      "location": "Juwaydeh Prison, Jordan"
+    },
+    {
+      "id": 13,
+      "title": "Unemployed Individuals' Iftar",
+      "description": "Charitable iftar tables for those who have lost their jobs and face financial hardships.",
+      "image": "https://example.com/unemployed-iftar.jpg",
+      "location": "Tafileh, Jordan"
+    },
+    {
+      "id": 14,
+      "title": "Volunteers' Iftar",
+      "description": "A community iftar event honoring individuals who dedicate their time to volunteer work during Ramadan.",
+      "image": "https://example.com/volunteers-iftar.jpg",
+      "location": "Karak, Jordan"
+    },
+    {
+      "id": 15,
+      "title": "Cancer Patients' Iftar",
+      "description": "A charitable iftar organized for children battling cancer to bring them joy and comfort.",
+      "image": "https://example.com/cancer-kids-iftar.jpg",
+      "location": "Al-Bashir Hospital, Amman"
+    }
+  ]
+}
