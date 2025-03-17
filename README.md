@@ -1,30 +1,39 @@
-# 🌍 Donation Website
+# NourNest - Iftar Events Website
 
-## 📌 About the Project
+**Project Description:**
+NourNest is a website that organizes and showcases Iftar events, such as Ramadan gatherings or community breakfast events. It allows users to view, filter, and interact with event details.
 
-This is a **Donation Website** built using **HTML, CSS, and JavaScript**. The website allows users to donate easily and securely to various causes. It features a user-friendly design, smooth navigation, and a seamless donation process.
+**Technologies Used:**
+- **HTML**: For building the basic structure.
+- **CSS**: For styling and designing the interface.
+- **JavaScript**: For adding interactivity and dynamic features.
 
----
+**Features:**
+- List of Iftar events.
+- Event filtering by date and location.
+- Details of each event, including time and place.
+- Responsive design for all devices.
 
-## 🚀 Features
+**Figma Design:**
+You can view the design here:  
+[Figma Design](https://www.figma.com/design/rdGmNAXWB0vmYtDWBlgvnq/Untitled?t=QOve8l3a1gzkIr7L-1)
 
-✅ User-friendly UI/UX design  
-✅ Secure donation system  
-✅ Responsive and mobile-friendly  
-✅ Real-time updates on donations  
-✅ Multiple payment options  
-✅ Causes and campaigns listing  
-✅ Contact and support section  
+**Trello Board:**
+For project tasks and planning:  
+[Trello Board - CSSisters](https://trello.com/invite/b/67d7d212af30bbb292b94a53/ATTI964a95c4d52f69ee588bc202724bcb55BB17C111/cssisters)
 
----
+**How to Run Locally:**
+1. **Download Files**: Download the project files from the repository.
+2. **Open Files**: Open the files in your text editor (e.g., VS Code).
+3. **Run the Site**: Open `index.html` in your browser.
 
-## 🛠️ Technologies Used
+**Future Development:**
+- User registration for event participation.
+- Enhanced user experience with frameworks like React or Vue.js.
+- Advanced event filtering options.
 
-- **HTML** - Structure of the website  
-- **CSS** - Styling and layout  
-- **JavaScript** - Functionality and interactivity  
-
----
+**Contributions:**
+Feel free to contribute by opening a "Pull Request" or reporting any issues you encounter.
 
 ## 👥 Team Members
 
