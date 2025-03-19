@@ -215,38 +215,28 @@
                             <div class="absolute w-6 h-6 bg-purple-600 rounded-full left-4"></div>
                         </div>
                         <span class="text-2xl font-bold text-white font-amiri tracking-wider">
-                            <span class="text-gold-400">Noor</span>Nest
+                            <a href="/index.html">
+                                <span class="text-gold-400">Noor</span>Nest
+                            </a>
                         </span>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="index.html" class="border-gold-400 text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            Home
-                        </a>
-                        <a href="./HTML/donation.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            Events
-                        </a>
-                        <!-- <a href="#" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            Events
-                        </a> -->
-                        <a href="./HTML/contact.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            contact
-                        </a>
-                        <a href="./HTML/about.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            About
-                        </a>
-                        <a href="./HTML/charity.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                            Charity Books
-                        </a>
+                        <a href="index.html" class="border-gold-400 text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                        <a href="./HTML/donation.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Events</a>
+                        <a href="./HTML/contact.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact</a>
+                        <a href="./HTML/about.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
+                        <a href="./HTML/charity.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Charity Books</a>
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:items-center">
-                    <!-- When logged in, the username will be displayed. Clicking the link navigates to user.html -->
+                    <!-- زر تسجيل الدخول -->
                     <a id="userLink" href="./HTML/signup.html" class="bg-gold-400 hover:bg-gold-300 text-purple-700 px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                      Sign In
+                        Sign In
                     </a>
-                  </div>
+                </div>
+                <!-- زر القائمة للهواتف -->
                 <div class="-mr-2 flex items-center sm:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gold-400" aria-expanded="false">
+                    <button id="menuButton" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gold-400">
                         <span class="sr-only">Open main menu</span>
                         <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -255,7 +245,19 @@
                 </div>
             </div>
         </div>
+
+        <!-- قائمة الهاتف المخفية -->
+        <div id="mobileMenu" class="sm:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="./HTML/donation.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="./HTML/contact.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="./HTML/about.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="./HTML/charity.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Charity Books</a>
+            </div>
+        </div>
     </nav>
+
 
     <!-- Decorative Hanging Elements Banner -->
 

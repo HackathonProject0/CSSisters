@@ -7,37 +7,257 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts link for Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    gold: {
+                        300: '#E6C87D',
+                        400: '#D9B255', /* User requested gold color */
+                        500: '#C9A03F',
+                        600: '#B08F2E',
+                    },
+                    purple: {
+                        400: '#5F2D6B',
+                        500: '#471C54', /* User requested purple color */
+                        600: '#371542',
+                        700: '#2A1033',
+                    }
+                },
+                fontFamily: {
+                    'amiri': ['Amiri', 'serif'],
+                    'poppins': ['Poppins', 'sans-serif'],
+                },
+                backgroundImage: {
+                    'stars': "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"400\" viewBox=\"0 0 800 800\"%3E%3Cg fill=\"none\" stroke=\"%23FFFFFF\" stroke-opacity=\"0.1\"%3E%3Ccircle r=\"1\" cx=\"100\" cy=\"100\"/%3E%3Ccircle r=\"1\" cx=\"200\" cy=\"150\"/%3E%3Ccircle r=\"1\" cx=\"300\" cy=\"50\"/%3E%3Ccircle r=\"1\" cx=\"400\" cy=\"250\"/%3E%3Ccircle r=\"1\" cx=\"500\" cy=\"150\"/%3E%3Ccircle r=\"1\" cx=\"600\" cy=\"350\"/%3E%3Ccircle r=\"1\" cx=\"700\" cy=\"250\"/%3E%3Ccircle r=\"1\" cx=\"150\" cy=\"250\"/%3E%3Ccircle r=\"1\" cx=\"250\" cy=\"350\"/%3E%3Ccircle r=\"1\" cx=\"350\" cy=\"450\"/%3E%3Ccircle r=\"1\" cx=\"450\" cy=\"550\"/%3E%3Ccircle r=\"1\" cx=\"550\" cy=\"650\"/%3E%3Ccircle r=\"1\" cx=\"650\" cy=\"750\"/%3E%3Ccircle r=\"1\" cx=\"750\" cy=\"350\"/%3E%3C/g%3E%3C/svg%3E')",
+                },
+                animation: {
+                    'float': 'float 6s ease-in-out infinite',
+                    'float-slow': 'float 8s ease-in-out infinite',
+                    'float-slower': 'float 10s ease-in-out infinite',
+                    'glow': 'glow 2s ease-in-out infinite alternate',
+                    'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    'sway': 'sway 3s ease-in-out infinite alternate',
+                    'fall': 'fall 10s linear infinite',
+                    'twinkle': 'twinkle 2s ease-in-out infinite alternate',
+                    'swing': 'swing 5s ease-in-out infinite',
+                    'flicker': 'flicker 3s ease-in-out infinite alternate',
+                },
+                keyframes: {
+                    float: {
+                        '0%, 100%': { transform: 'translateY(0)' },
+                        '50%': { transform: 'translateY(-10px)' },
+                    },
+                    glow: {
+                        '0%': { filter: 'brightness(1)' },
+                        '100%': { filter: 'brightness(1.5)' },
+                    },
+                    sway: {
+                        '0%': { transform: 'rotate(-5deg)' },
+                        '100%': { transform: 'rotate(5deg)' },
+                    },
+                    fall: {
+                        '0%': { transform: 'translateY(-100vh)', opacity: '0' },
+                        '10%': { opacity: '1' },
+                        '100%': { transform: 'translateY(100vh)', opacity: '0.7' },
+                    },
+                    twinkle: {
+                        '0%': { opacity: '0.3', filter: 'brightness(0.8)' },
+                        '100%': { opacity: '1', filter: 'brightness(1.3)' },
+                    },
+                    swing: {
+                        '0%': { transform: 'rotate(-3deg) translateY(0)' },
+                        '25%': { transform: 'rotate(3deg) translateY(-5px)' },
+                        '50%': { transform: 'rotate(-3deg) translateY(0)' },
+                        '75%': { transform: 'rotate(3deg) translateY(-5px)' },
+                        '100%': { transform: 'rotate(-3deg) translateY(0)' },
+                    },
+                    flicker: {
+                        '0%, 18%, 22%, 25%, 53%, 57%, 100%': { filter: 'brightness(1.5) drop-shadow(0 0 15px rgba(217, 178, 85, 0.7))' },
+                        '20%, 24%, 55%': { filter: 'brightness(1.2) drop-shadow(0 0 10px rgba(217, 178, 85, 0.5))' },
+                    }
+                }
+            },
+        },
     }
-  </style>
+</script>
+<style>
+    .islamic-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627,2.269 L54.627,0 L37.894,0 L37.894,2.269 L39.394,2.269 L39.394,9.575 C39.394,10.937 40.499,12.042 41.86,12.042 L43.127,12.042 L43.127,19.148 C43.127,20.509 44.232,21.614 45.593,21.614 L46.86,21.614 L46.86,28.721 C46.86,30.082 47.965,31.187 49.326,31.187 L50.593,31.187 L50.593,38.294 C50.593,39.655 51.698,40.76 53.059,40.76 L54.627,40.76 L54.627,38.492 L53.059,38.492 C52.949,38.492 52.86,38.403 52.86,38.294 L52.86,31.187 L54.627,31.187 L54.627,28.919 L49.326,28.919 C49.216,28.919 49.127,28.83 49.127,28.721 L49.127,21.614 L54.627,21.614 L54.627,19.346 L45.593,19.346 C45.483,19.346 45.394,19.257 45.394,19.148 L45.394,12.042 L54.627,12.042 L54.627,9.774 L41.86,9.774 C41.75,9.774 41.661,9.685 41.661,9.575 L41.661,2.269 L54.627,2.269 Z' fill='%23D9B255' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+    
+    .lantern-glow {
+        filter: drop-shadow(0 0 15px rgba(217, 178, 85, 0.7));
+        animation: flicker 3s ease-in-out infinite alternate;
+    }
+    
+    .crescent-moon {
+        filter: drop-shadow(0 0 8px rgba(217, 178, 85, 0.5));
+    }
+    
+    .star-glow {
+        filter: drop-shadow(0 0 5px rgba(217, 178, 85, 0.7));
+    }
+    
+    .falling-element {
+        position: absolute;
+        z-index: 1;
+        animation-duration: var(--fall-duration);
+        animation-delay: var(--fall-delay);
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        opacity: 0;
+    }
+    
+    /* Create hanging string effect */
+    .hanging-string {
+        position: relative;
+    }
+    
+    .hanging-string::before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        width: 1px;
+        height: 30px;
+        background: linear-gradient(to bottom, transparent, rgba(217, 178, 85, 0.5));
+        transform: translateX(-50%);
+    }
+    
+    /* Arch decoration */
+    .islamic-arch {
+        position: relative;
+        height: 60px;
+        background: radial-gradient(ellipse 80% 50% at 50% 100%, transparent 50%, #D9B255 50%, #D9B255 51%, transparent 51%);
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #2A1033;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #D9B255;
+        border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #C9A03F;
+    }
+    
+    /* Animated background gradient */
+    .bg-gradient-animated {
+        background: linear-gradient(135deg, #471C54 0%, #371542 25%, #2A1033 50%, #371542 75%, #471C54 100%);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+    }
+    
+    /* Lantern flame effect */
+    .lantern-flame {
+        position: absolute;
+        width: 30%;
+        height: 20%;
+        background: radial-gradient(ellipse at center, rgba(255,255,255,0.8) 0%, rgba(255,213,79,0.8) 50%, rgba(255,147,43,0.5) 100%);
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: blur(2px);
+        animation: flameFlicker 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes flameFlicker {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+        25% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+        50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.9; }
+        75% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.75; }
+    }
+    
+    @keyframes gradientBG {
+        0% { background-position: 0% 50% }
+        50% { background-position: 100% 50% }
+        100% { background-position: 0% 50% }
+    }
+    
+    /* 3D effect for lanterns */
+    .lantern-3d {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transition: transform 0.3s ease;
+    }
+    
+    .lantern-3d:hover {
+        transform: rotateY(10deg) rotateX(5deg);
+    }
+    
+    /* Parallax effect for background elements */
+    .parallax {
+        transition: transform 0.1s ease-out;
+    }
+  
+</style>
 </head>
-<body class="bg-gray-50">
-    <nav class="bg-[#471C54] text-white">
-        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<body class="font-poppins bg-gradient-animated text-white min-h-screen overflow-x-hidden">
+<!-- Navigation -->
+<nav class="bg-purple-600/80 backdrop-blur-sm border-b border-gold-400/20 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
             <div class="flex items-center">
-                <div class="mr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#D9B255]" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                    </svg>
+                <div class="flex-shrink-0 flex items-center">
+                    <!-- Logo with crescent moon -->
+                    <div class="relative h-10 w-10 mr-2">
+                        <div class="absolute crescent-moon w-8 h-8 bg-gold-400 rounded-full left-0 animate-pulse-slow"></div>
+                        <div class="absolute w-6 h-6 bg-purple-600 rounded-full left-4"></div>
+                    </div>
+                    <span class="text-2xl font-bold text-white font-amiri tracking-wider">
+                      <a href="/index.html">
+                          <span class="text-gold-400">Noor</span>Nest
+                      </a>
+                  </span>
                 </div>
-                <a href="#" class="text-xl font-bold">
-                    <span class="text-[#D9B255]">Noor</span><span class="text-white">Nest</span>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="index.html" class="border-gold-400 text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                    <a href="./HTML/donation.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Events</a>
+                    <a href="./HTML/contact.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact</a>
+                    <a href="./HTML/about.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
+                    <a href="./HTML/charity.html" class="border-transparent text-gray-300 hover:border-gold-300 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Charity Books</a>
+                </div>
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <!-- زر تسجيل الدخول -->
+                <a id="userLink" href="./HTML/signup.html" class="bg-gold-400 hover:bg-gold-300 text-purple-700 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                    Sign In
                 </a>
             </div>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="../index.html" class="hover:text-[#D9B255] py-2">Home</a>
-                <a href="./donation.html" class="hover:text-[#D9B255] py-2">Events</a>
-                <a href="./contact.html" class="hover:text-[#D9B255] py-2">contact</a>
-                <a href="./about.html" class="active-nav-link py-2">About</a>
-                <a href="./charity.html" class="hover:text-[#D9B255] py-2">Charity Books</a>
-            </div>
-            <div>
-                <a href="#" class="bg-[#D9B255] text-white px-4 py-2 rounded-md hover:bg-yellow-600">Sign In</a>
+            <!-- زر القائمة للهواتف -->
+            <div class="-mr-2 flex items-center sm:hidden">
+                <button id="menuButton" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gold-400">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
         </div>
-    </nav>
+    </div>
+
+    <!-- قائمة الهاتف المخفية -->
+    <div id="mobileMenu" class="sm:hidden hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="index.html" class="block text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="./HTML/donation.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Events</a>
+            <a href="./HTML/contact.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            <a href="./HTML/about.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">About</a>
+            <a href="./HTML/charity.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium">Charity Books</a>
+        </div>
+    </div>
+</nav>
   <!-- About Us Section -->
   <section class="bg-[#471C54] py-16">
     <div class="container mx-auto px-4 text-center">
